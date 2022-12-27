@@ -1,91 +1,30 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+import Image from 'next/image';
 
-const inter = Inter({ subsets: ['latin'] })
+import Person from '../assets/images/person.png';
+import GalleryNavbar from '../components/Gallery/GalleryNavbar';
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+const Home = () => (
+	<>
+		<main className='h-screen w-full flex flex-col absolute top-0 overflow-hidden bg-[#090909] md:flex md:justify-center'>
+			<Image
+				src={Person}
+				height={1250}
+				width={600}
+				alt='person'
+				className='absolute bottom-0 md:bottom-auto md:-top-64 left-1/2 -translate-x-1/2 opacity-50 '
+			/>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
+			<section className='relative z-10 font-barlow text-white text-center mt-48 px-8 md:flex md:flex-col md:text-left md:w-full max-w-7xl md:p-20 md:absolute md:bottom-0 md:mt-0 left-1/2 -translate-x-1/2'>
+				<h1 className='font-black text-[10vmin] italic tracking-widest'>Miloš Lakićević</h1>
+				<h2 className='uppercase tracking-[3px] font-light text-sm'>Photographer / Videographer</h2>
+				<blockquote className='font-light tracking-widest mt-[55px] italic mx-auto max-w-md md:max-w-xl md:text-center md:text-[20px]'>
+					“ The single most important component of a camera is the twelve inches behind it. “
+				</blockquote>
+			</section>
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+			<GalleryNavbar className='left-0 top-2/3 md:-translate-y-1/2 md:top-1/2 md:left-auto' />
+		</main>
+	</>
+);
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+export default Home;
