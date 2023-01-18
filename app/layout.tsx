@@ -1,27 +1,11 @@
-import { Jost, Barlow } from '@next/font/google';
+import "./globals.css";
 
-import './globals.css';
-import Header from '../components/Header';
-
-const jost = Jost({
-	subsets: ['latin'],
-	variable: '--font-jost',
-});
-
-const barlow = Barlow({
-	subsets: ['latin'],
-	variable: '--font-barlow',
-	weight: ['300', '400', '700', '900'],
-	style: ['normal', 'italic'],
-});
+import { jost, barlow } from "./config/typography";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
-	<html lang='en' className={`${jost.variable} ${barlow.variable}`}>
-		<body>
-			<Header />
-			{children}
-		</body>
-	</html>
+  <html lang="en" className={`${jost.variable} ${barlow.variable}`}>
+    <body className="overflow-hidden">{children}</body>
+  </html>
 );
 
 export default RootLayout;
