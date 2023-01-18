@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useLayoutEffect } from "react";
+import { useState, useEffect } from "react";
 import { gsap } from "gsap";
 
 import Background from "../components/Background";
@@ -12,7 +12,7 @@ import Person from "../assets/images/person.png";
 const Home = () => {
   const [timeline, setTimeline] = useState<GSAPTimeline>();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
       setTimeline(tl);
@@ -25,11 +25,11 @@ const Home = () => {
     <main className="h-screen w-full flex flex-col bg-[#090909] overflow-hidden">
       <Header timeline={gsap} />
 
-      <Intro />
+      <Intro timeline={gsap} />
 
       <Background
         image={Person}
-        classNames="absolute bottom-0 left-1/3 md:left-1/2 opacity-50 opacity-0 translate-x-[150px]"
+        classNames="absolute z-10 bottom-0 left-1/3 md:left-1/2 opacity-50 opacity-0 translate-x-[50px]"
         timeline={timeline}
       />
     </main>

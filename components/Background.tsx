@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useEffect } from "react";
 
 import { BackgroundProps } from "./types";
 
@@ -10,15 +10,15 @@ const Background = (props: BackgroundProps) => {
 
   const { timeline } = props;
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const { current } = el;
 
     timeline?.to(current, {
-      opacity: 0.5,
+      opacity: 1,
       y: 0,
       x: 0,
       duration: 1,
-      delay: 0.15,
+      delay: 1,
     });
   }, [timeline]);
 

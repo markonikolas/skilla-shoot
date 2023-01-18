@@ -1,4 +1,6 @@
-import { useRef, useLayoutEffect } from "react";
+"use client";
+
+import { useRef, useEffect } from "react";
 
 import Logo from "./Logo";
 import Navbar from "./Nav/Navbar";
@@ -9,7 +11,7 @@ const Header = (props: AnimationElementProps) => {
 
   const { timeline } = props;
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const { current } = el;
 
     timeline?.to(current, { opacity: 1, y: 0, x: 0, duration: 1 });
@@ -18,7 +20,7 @@ const Header = (props: AnimationElementProps) => {
   return (
     <header
       ref={el}
-      className="translate-y-[10px] opacity-0 flex justify-between items-center gap-8 p-8 md:p-20 pt-12 w-full text-white max-w-7xl mx-auto"
+      className="relative z-50 translate-y-[10px] opacity-0 flex justify-between items-center gap-8 p-8 md:p-20 pt-12 w-full text-white max-w-7xl mx-auto"
     >
       <Logo />
       <Navbar />
