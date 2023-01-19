@@ -24,7 +24,7 @@ const Intro = (props: AnimationElementProps) => {
         Miloš Lakićević
       </h1>
       <h2 className="uppercase tracking-[3px] font-light text-sm">
-        Photographer / Videographer
+        Photo / Videographer
       </h2>
       <blockquote className="text-2xl max-w-xl font-light tracking-widest italic mt-12">
         “ The single most important component of a camera is the twelve inches

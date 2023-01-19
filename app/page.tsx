@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 import Background from "../components/Background";
 import Header from "../components/Header";
@@ -15,6 +16,7 @@ const Home = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
+      gsap.registerPlugin(ScrollTrigger);
       setTimeline(tl);
     });
 

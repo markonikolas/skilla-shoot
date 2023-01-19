@@ -19,6 +19,9 @@ const Background = (props: BackgroundProps) => {
       x: 0,
       duration: 1,
       delay: 1,
+      scrollTrigger: {
+        
+      }
     });
   }, [timeline]);
 
