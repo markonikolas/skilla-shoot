@@ -18,7 +18,7 @@ const Intro = (props: AnimationElementProps) => {
   return (
     <section
       ref={el}
-      className="relative z-10 font-barlow text-white max-w-7xl mx-auto w-full p-8 md:p-20 translate-y-[10px] opacity-0"
+      className="relative z-10 font-barlow text-white max-w-7xl mx-auto w-full p-8 md:p-20 translate-y-[10px] opacity-0 h-screen"
     >
       <h1 className="font-black text-[10vmin] italic tracking-widest">
         Miloš Lakićević

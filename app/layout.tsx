@@ -4,7 +4,7 @@ import { jost, barlow } from "./config/typography";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang="en" className={`${jost.variable} ${barlow.variable}`}>
-    <body className="overflow-hidden">{children}</body>
+    <body>{children}</body>
   </html>
 );
 

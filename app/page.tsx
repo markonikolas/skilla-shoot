@@ -24,14 +24,20 @@ const Home = () => {
   }, []);
 
   return (
-    <main className="h-screen w-full flex flex-col bg-[#090909] overflow-hidden">
+    <main className="w-full flex flex-col bg-[#090909]">
       <Header timeline={gsap} />
 
       <Intro timeline={gsap} />
 
+      <section className="h-screen bg-[#090909]"></section>
+
+      <section className="h-screen bg-[#090909]"></section>
+
+      <section className="h-screen bg-[#090909]"></section>
+
       <Background
         image={Person}
-        classNames="absolute z-10 bottom-0 left-1/3 md:left-1/2 opacity-50 opacity-0 translate-x-[50px]"
+        classNames="person absolute z-10 bottom-0 left-1/3 md:left-1/2 opacity-50 opacity-0 translate-x-[50px]"
         timeline={timeline}
       />
     </main>

@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import { useRef, useEffect } from "react";
+import Image, { StaticImageData } from "next/image";
+import { useRef, useEffect, useState } from "react";
 
 import { BackgroundProps } from "./types";
 
@@ -19,9 +19,17 @@ const Background = (props: BackgroundProps) => {
       x: 0,
       duration: 1,
       delay: 1,
+    });
+
+    timeline?.to(current, {
       scrollTrigger: {
-        
-      }
+        trigger: ".person",
+        pin: true,
+        start: "top 40px",
+        scrub: true,
+        end: "+=1000",
+        markers: true,
+      },
     });
   }, [timeline]);
 
