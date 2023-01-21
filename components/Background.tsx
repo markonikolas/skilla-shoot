@@ -20,17 +20,6 @@ const Background = (props: BackgroundProps) => {
       duration: 1,
       delay: 1,
     });
-
-    timeline?.to(current, {
-      scrollTrigger: {
-        trigger: ".person",
-        pin: true,
-        start: "top 40px",
-        scrub: true,
-        end: "+=1000",
-        markers: true,
-      },
-    });
   }, [timeline]);
 
   return (

@@ -2,6 +2,8 @@
 
 import { useRef, useEffect } from "react";
 
+import { gsap } from "gsap";
+
 import Logo from "./Logo";
 import Navbar from "./Nav/Navbar";
 import { AnimationElementProps } from "./types";
@@ -14,7 +16,7 @@ const Header = (props: AnimationElementProps) => {
   useEffect(() => {
     const { current } = el;
 
-    timeline?.to(current, { opacity: 1, y: 0, x: 0, duration: 1 });
+    gsap?.to(current, { opacity: 1, y: 0, x: 0, duration: 1 });
   }, [timeline]);
 
   return (
